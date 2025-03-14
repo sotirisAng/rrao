@@ -1,0 +1,74 @@
+prefixes:
+  rrao: "http://w3id.org/rrao#"
+
+mappings:
+  personWithCustodialHistory:
+    sources: 
+      - [GREEK_LOD.csv~csv]
+    s: rrao:personWithCustodialHistory_$(ID)
+    po: 
+      - [a, rrao:personWithCustodialHistory]
+      - [rrao:sex, $(SEX), el~lang]
+      - [rrao:ageEnteringPrison, $(AGE ENTERING PRISON)]
+      - [rrao:ageExitingPrison, $(AGE EXITING PRISON)]
+      - [rrao:daysInCustody, $(DAYS IN CUSTODY), xsd:integer]
+      - [rrao:numberOfReleases, $(NUMBER OF RELEASES), xsd:integer]
+      - [rrao:reportedOccupation, $(REPORTED OCCUPATION), el~lang]
+      - [rrao:levelOfEducation, $(LEVEL OF EDUCATION), el~lang]
+      - [rrao:maritalStatus, $(MARITAL STATUS), el~lang]
+      - [rrao:nationality, $(NATIONALITY), el~lang]
+      - [rrao:sentecedTo, rrao:penalty_$(RECORD ID)~iri]
+      - [rrao:participatedIn, rrao:crime_$(RECORD ID)~iri]
+      - [rrao:detainedAt, rrao:correctionalInstitution_$(CORRECTIONAL INSTITUTION ID)~iri]
+  courtDecision:
+    sources: 
+      - [GREEK_LOD.csv~csv]
+    s: rrao:courtDecision_$(RECORD ID)
+    po: 
+      - [a, rrao:courtDecision ]
+      - [rrao:defined, rrao:penalty_$(RECORD ID)~iri]
+      - [rdfs:label, $(COURT DECISION), el~lang]
+  penalty:
+    sources: 
+      - [GREEK_LOD.csv~csv]
+    s: rrao:penalty_$(RECORD ID)
+    po: 
+      - [a, rrao:penalty]
+      - [rrao:executedAs, rrao:wayOfRelease_$(RECORD ID)~iri]
+      - [rrao:isRelatedToCrime, rrao:crime_$(RECORD ID)~iri]
+      - [rrao:penaltyDuration, $(PENALTY DURATION), xsd:integer]
+  crime:
+    sources: 
+      - [GREEK_LOD.csv~csv]
+    s: rrao:crime_$(RECORD ID)
+    po: 
+      - [a, rrao:crime ]
+      - [rdfs:label, $(CRIME), el~lang]
+  correctionalInstitution:
+    sources: 
+      - [GREEK_LOD.csv~csv]
+    s: rrao:correctionalInstitution_$(CORRECTIONAL INSTITUTION ID)
+    po: 
+      - [a, rrao:correctionalInstitution ]
+      - [rdfs:label, $(CORRECTIONAL INSTITUTION), el~lang]
+  wayOfRelease:
+    sources: 
+      - [GREEK_LOD.csv~csv]
+    s: rrao:wayOfRelease_$(RECORD ID)
+    po: 
+      - [a, rrao:wayOfRelease ]
+      - [rdfs:label, $(WAY OF RELEASE), el~lang]
+  detentionRecord:
+    sources: 
+      - [GREEK_LOD.csv~csv]
+    s: rrao:detentionRecord_$(RECORD ID)
+    po: 
+      - [a, rrao:detentionRecord ]
+      - [rdfs:concerns, rrao:personWithCustodialHistory_$(ID)~iri]
+      - [rdfs:relatesToCorrectionalInstitution, rrao:correctionalInstitution_$(CORRECTIONAL INSTITUTION ID)~iri]
+      - [rdfs:relatesPenalty, rrao:penalty_$(RECORD ID)~iri]
+      - [rrao:ageEnteringPrison, $(AGE ENTERING PRISON)]
+      - [rrao:ageExitingPrison, $(AGE EXITING PRISON)]
+      - [rrao:reportedOccupation, $(REPORTED OCCUPATION), el~lang]
+      - [rrao:levelOfEducation, $(LEVEL OF EDUCATION), el~lang]
+      - [rrao:maritalStatus, $(MARITAL STATUS), el~lang]

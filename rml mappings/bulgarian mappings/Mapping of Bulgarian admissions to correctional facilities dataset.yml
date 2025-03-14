@@ -1,0 +1,138 @@
+prefixes:
+  rrao: "http://w3id.org/rrao#"
+  idlab: "http://example.com/idlab/function/"
+  grel: http://users.ugent.be/~bjdmeest/function/grel.ttl#
+
+mappings:
+  personWithCustodialHistory:
+    sources: 
+      - [BG_dataset_anonymized_with_rowId.csv~csv]
+    s: rrao:personWithCustodialHistory_$(Complete_id)
+    po: 
+      - [a, rrao:personWithCustodialHistory]
+      - [rrao:sex, $(1.2), bg~lang]
+      - [rrao:ageEnteringPrison, $(Age_of_entering_prison)]
+      - [rrao:ageExitingPrison, $(Age_of_release)]
+      - [rrao:nationality, $(1.5), bg~lang]
+      - [rrao:reportedOccupation, $(1.6), bg~lang]
+      - [rrao:vocationalQualifications, $(1.7), bg~lang]
+      - [rrao:levelOfEducation, $(1.7), bg~lang]
+      - [rrao:maritalStatus, $(1.10), bg~lang]
+      - [rrao:siblings, $(1.11), xsd:boolean]
+      - [rrao:sentecedTo, rrao:penalty_$(Record_id)~iri]
+      - [rrao:detainedAt, rrao:correctionalInstitution_$(Prison_id)~iri]
+  court_2:
+    sources: 
+      - [BG_dataset_anonymized_with_rowId.csv~csv]
+    s: rrao:court_$(2.2.1.1)
+    po: 
+      - [a, rrao:court ]
+      - [rrao:defined, rrao:penalty_$(Record_id)~iri]
+  courtDecision_2:
+    sources: 
+      - [BG_dataset_anonymized_with_rowId.csv~csv]
+    s: rrao:courtDecision_$(Record_id)_$(2.2.1.1)
+    po: 
+      - [a, rrao:courtDecision ]
+      - [rrao:defined, rrao:penalty_$(Record_id)~iri]
+      - [rrao:decisionDate , $(2.2.2)]
+  court_3:
+    sources: 
+      - [BG_dataset_anonymized_with_rowId.csv~csv]
+    s: rrao:court_$(3.2.1.1)
+    po: 
+      - [a, rrao:court ]
+      - [rrao:defined, rrao:penalty_$(Record_id)~iri]
+  courtDecision_3:
+    sources: 
+      - [BG_dataset_anonymized_with_rowId.csv~csv]
+    s: rrao:courtDecision_$(Record_id)_$(3.2.1.1)
+    po: 
+      - [a, rrao:courtDecision ]
+      - [rrao:defined, rrao:penalty_$(Record_id)~iri]
+      - [rrao:decisionDate , $(3.2.2)]
+  court_4:
+    sources: 
+      - [BG_dataset_anonymized_with_rowId.csv~csv]
+    s: rrao:court_$(4.2.1.1)
+    po: 
+      - [a, rrao:court ]
+      - [rrao:defined, rrao:penalty_$(Record_id)~iri]
+  courtDecision_4:
+    sources: 
+      - [BG_dataset_anonymized_with_rowId.csv~csv]
+    s: rrao:courtDecision_$(Record_id)_$(4.2.1.1)
+    po: 
+      - [a, rrao:courtDecision ]
+      - [rrao:defined, rrao:penalty_$(Record_id)~iri]
+      - [rrao:decisionDate , $(4.2.2)]
+  court_5:
+    sources: 
+      - [BG_dataset_anonymized_with_rowId.csv~csv]
+    s: rrao:court_$(5.2.1.1)
+    po: 
+      - [a, rrao:court ]
+      - [rrao:defined, rrao:penalty_$(Record_id)~iri]
+  courtDecision_5:
+    sources: 
+      - [BG_dataset_anonymized_with_rowId.csv~csv]
+    s: rrao:courtDecision_$(Record_id)_$(5.2.1.1)
+    po: 
+      - [a, rrao:courtDecision ]
+      - [rrao:defined, rrao:penalty_$(Record_id)~iri]
+      - [rrao:decisionDate , $(5.2.2)]
+  penalty:
+    sources: 
+      - [BG_dataset_anonymized_with_rowId.csv~csv]
+    s: rrao:penalty_$(Record_id)
+    po: 
+      - [a, rrao:penalty]
+      - [rrao:executedAs, rrao:wayOfRelease_$(Record_id)~iri]
+      - [rrao:penaltyDuration, $(4.4), xsd:integer]
+      - [rrao:resultsFromMulitpleCrimes, $(4.3), xsd:boolean]
+  correctionalInstitution:
+    sources: 
+      - [BG_dataset_anonymized_with_rowId.csv~csv]
+    s: rrao:correctionalInstitution_$(Prison_id)
+    po: 
+      - [a, rrao:correctionalInstitution ]
+      - [rdfs:label, $(1.1.1), bg~lang]
+  wayOfRelease:
+    sources: 
+      - [BG_dataset_anonymized_with_rowId.csv~csv]
+    s: rrao:wayOfRelease_$(Way_of_release_id)
+    po: 
+      - [a, rrao:wayOfRelease ]
+      - [rdfs:label, $(Way_of_release), bg~lang]
+  probation:
+    sources: 
+      - [BG_dataset_anonymized_with_rowId.csv~csv]
+    s: rrao:probation$(Probation_id)
+    po: 
+      - [a, rrao:probation ]
+      - p: rdfs:label
+        o: $(Probation)
+
+  riskAssessment:
+    sources: 
+      - [BG_dataset_anonymized_with_rowId.csv~csv]
+    s: rrao:riskAssessment_$(Assessment_id)
+    po: 
+      - [a, rrao:riskAssessment ]
+      - [rdfs:label, $(6.1), bg~lang]
+      - p: rrao:dateOfRiskAssessment 
+        o: $(6.1.1)
+  detentionRecord:
+    sources: 
+      - [BG_dataset_anonymized_with_rowId.csv~csv]
+    s: rrao:detentionRecord_$(Record_id)
+    po: 
+      - [a, rrao:detentionRecord ]
+      - [rdfs:concerns, rrao:personWithCustodialHistory_$(Complete_id)~iri]
+      - [rdfs:relatesToCorrectionalInstitution, rrao:correctionalInstitution_$(Prison_id)~iri]
+      - [rdfs:relatesPenalty, rrao:penalty_$(Record_id)~iri]
+      - [rrao:ageEnteringPrison, $(Age_of_entering_prison)]
+      - [rrao:ageExitingPrison, $(Age_of_release)]
+      - [rrao:reportedOccupation, $(1.6), bg~lang]
+      - [rrao:levelOfEducation, $(1.7), bg~lang]
+      - [rrao:maritalStatus, $(1.10), bg~lang]
