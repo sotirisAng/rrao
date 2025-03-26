@@ -1,0 +1,1337 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://i-lab.aegean.gr/ontologies/rrao#"
+     xml:base="http://i-lab.aegean.gr/ontologies/rrao"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:wot="http://xmlns.com/wot/0.1/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/spec/"
+     xmlns:odrl="https://www.w3.org/ns/odrl/2/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rrao="https://w3id.org/rrao#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:eurovoc="http://publications.europa.eu/resource/authority/eurovoc/">
+    <owl:Ontology rdf:about="https://w3id.org/rrao">
+        <owl:imports rdf:resource="http://i-lab.aegean.gr/ontologies/rrao/iccs#"/>
+        <owl:imports rdf:resource="http://www.w3.org/ns/odrl/2/"/>
+        <dc:bibliographicCitation xml:lang="en">FAIR-PReSONS EU JUST project, Reoffending Risk Assesment Ontology,  Revision: v0.5.</dc:bibliographicCitation>
+        <dc:contributor xml:lang="en">A. Sykiotou, Democritus University of Thace, asikioto@law.duth.gr</dc:contributor>
+        <dc:contributor xml:lang="en">Joana Pinho, IPS, joana.pinho@prisonsystems.eu</dc:contributor>
+        <dc:creator xml:lang="en">K. Kotis, i-lab, University of the Aegean, kotis@aegean.gr</dc:creator>
+        <dc:creator xml:lang="en">S. Angelis, i-lab, University of the Aegean, sotiris@aegean.gr</dc:creator>
+        <dc:description xml:lang="en">RRAO focuses on the comprehensive representation of knowledge of reoffending and related concepts such as, crime, penalty, court decision.
+The ontology development is part of the FAIR – PReSONS research project.  https://fair-presons.aegean.gr/</dc:description>
+        <dc:licence xml:lang="en">CC0</dc:licence>
+        <dc:references xml:lang="en">eurovoc: https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/eurovoc</dc:references>
+        <dc:references xml:lang="en">https://i-lab.aegean.gr/kotis/Ontologies/RRAO/iccs.owl</dc:references>
+        <dc:references xml:lang="en">odrl:https://www.w3.org/ns/odrl/2/</dc:references>
+        <dc:title xml:lang="en">Reoffending Risk Assessment Ontology</dc:title>
+        <vann:preferredNamespacePrefix xml:lang="en">rrao</vann:preferredNamespacePrefix>
+        <rdfs:label xml:lang="en">Reoffending Risk Assessment Ontology</rdfs:label>
+        <rdfs:seeAlso xml:lang="en"></rdfs:seeAlso>
+        <owl:versionInfo>v1</owl:versionInfo>
+        <ns:term_status xml:lang="en"></ns:term_status>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/bibliographicCitation -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/bibliographicCitation"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/licence -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/licence"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/references -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/references"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://www.w3.org/2003/06/sw-vocab-status/ns#term_status -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/06/sw-vocab-status/ns#term_status"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#duration -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#duration"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#monetary -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#monetary"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/rrao#decides -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rrao#decides">
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#court"/>
+        <rdfs:range rdf:resource="https://w3id.org/rrao#courtDecision"/>
+        <rdfs:label xml:lang="en">decides</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#defines -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rrao#defines">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#courtDecision"/>
+        <rdfs:range rdf:resource="https://w3id.org/rrao#penalty"/>
+        <rdfs:comment xml:lang="en">Represents a court defining or establishing a penalty for a case.</rdfs:comment>
+        <rdfs:label xml:lang="en">defines</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#executedAs -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rrao#executedAs">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#penalty"/>
+        <rdfs:range rdf:resource="https://w3id.org/rrao#executionOfPenalty"/>
+        <rdfs:comment xml:lang="en">Indicates the manner in which a penalty or punishment is carried out.</rdfs:comment>
+        <rdfs:label xml:lang="en">executed as</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#hasGravity -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rrao#hasGravity">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#crime"/>
+        <rdfs:range rdf:resource="https://w3id.org/rrao#gravityOfCrime"/>
+        <rdfs:comment xml:lang="en">Indicates the severity or seriousness of a crime.</rdfs:comment>
+        <rdfs:label xml:lang="en">has gravity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#hasLevelOfParticipation -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rrao#hasLevelOfParticipation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#senetenced"/>
+        <rdfs:range rdf:resource="https://w3id.org/rrao#levelOfParticipation"/>
+        <rdfs:comment xml:lang="en">Describes the level or degree of participation an offender had in a crime.</rdfs:comment>
+        <rdfs:label xml:lang="en">has level of participation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#hasLiability -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rrao#hasLiability">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#senetenced"/>
+        <rdfs:range rdf:resource="https://w3id.org/rrao#liability"/>
+        <rdfs:comment xml:lang="en">Represents the level of legal responsibility or liability an offender holds.</rdfs:comment>
+        <rdfs:label xml:lang="en">has liability</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#hasRiskOfReoffending -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rrao#hasRiskOfReoffending">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#senetenced"/>
+        <rdfs:range rdf:resource="https://w3id.org/rrao#riskOfReoffending"/>
+        <rdfs:comment xml:lang="en">Represents the assessed risk that an offender will reoffend or engage in criminal behavior again.</rdfs:comment>
+        <rdfs:label xml:lang="en">has risk of reoffending</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#hasStatus -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rrao#hasStatus">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#imprisoned"/>
+        <rdfs:range rdf:resource="https://w3id.org/rrao#convictionStatus"/>
+        <rdfs:comment xml:lang="en">Describes the current status of an offender in prison</rdfs:comment>
+        <rdfs:label xml:lang="en">has status</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#improsonedAt -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rrao#improsonedAt">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#imprisoned"/>
+        <rdfs:range rdf:resource="https://w3id.org/rrao#prison"/>
+        <rdfs:comment xml:lang="en">Indicates the prison where an offender is currently held.</rdfs:comment>
+        <rdfs:label xml:lang="en">imprisoned at</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#isRelatedToCrime -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rrao#isRelatedToCrime">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#penalty"/>
+        <rdfs:range rdf:resource="https://w3id.org/rrao#crime"/>
+        <rdfs:comment xml:lang="en">Indicates the association between a penalty and a crime related to the case.</rdfs:comment>
+        <rdfs:label xml:lang="en">is related to crime</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#participatedIn -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rrao#participatedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#senetenced"/>
+        <rdfs:range rdf:resource="https://w3id.org/rrao#crime"/>
+        <rdfs:comment xml:lang="en">Indicates that the offender participated in a crime.</rdfs:comment>
+        <rdfs:label xml:lang="en">participated in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#sentencedTo -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rrao#sentencedTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#senetenced"/>
+        <rdfs:range rdf:resource="https://w3id.org/rrao#penalty"/>
+        <rdfs:comment>Indicates the penalty to which an offender has been sentenced.</rdfs:comment>
+        <rdfs:label>sentenced to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/rrao#ageGroup -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rrao#ageGroup">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The age group that the person belongs to.</rdfs:comment>
+        <rdfs:label xml:lang="en">age group</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#amountOfPecuniaryPenalty -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rrao#amountOfPecuniaryPenalty">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#pecuniarySentence"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#monetary"/>
+        <rdfs:comment xml:lang="en">Specifies the monetary amount of the pecuniary penalty.</rdfs:comment>
+        <rdfs:label xml:lang="en">amount of pecuniary penalty</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#beneficialCalculation -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rrao#beneficialCalculation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#penalty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Indicates whether beneficial calculation was applied to the penalty.</rdfs:comment>
+        <rdfs:label xml:lang="en">beneficial calculation</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#birthYear -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rrao#birthYear">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en">Specifies the birth year of a person.</rdfs:comment>
+        <rdfs:label xml:lang="en">birth year</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#clildren -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rrao#clildren">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates whether the person has children.</rdfs:comment>
+        <rdfs:label xml:lang="en">children</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#dateOfCrime -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rrao#dateOfCrime">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#crime"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en">Represents the date on which the crime occurred.</rdfs:comment>
+        <rdfs:label xml:lang="en">date of crime</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#dateOfEnteringPrison -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rrao#dateOfEnteringPrison">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#custodialPenalty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en">Specifies the date when the individual entered prison.</rdfs:comment>
+        <rdfs:label xml:lang="en">date of entering prison</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#dateOfExitingPrison -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rrao#dateOfExitingPrison">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#custodialPenalty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en">Indicates the date when the individual is expected to exit prison.</rdfs:comment>
+        <rdfs:label xml:lang="en">date of exiting prison</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#daysInCustody -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rrao#daysInCustody">
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#custody"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:label xml:lang="en">days in custody</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#daysSinceRelease -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rrao#daysSinceRelease">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#senetenced"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment xml:lang="en">Indicates the days since the person has been released form prison</rdfs:comment>
+        <rdfs:label xml:lang="en">days since release</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#decisionCode -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rrao#decisionCode">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#courtDecision"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Specifies the code or reference associated with a court decision.</rdfs:comment>
+        <rdfs:label xml:lang="en">decision code</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#decisionDate -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rrao#decisionDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#courtDecision"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en">Indicates the date associated with a court decision.</rdfs:comment>
+        <rdfs:label xml:lang="en">decision date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#generalRegisterNumber -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rrao#generalRegisterNumber">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#senetenced"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Represents the general register number associated with an imprisoned person.</rdfs:comment>
+        <rdfs:label xml:lang="en">general register number</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#irrevocableConviction -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rrao#irrevocableConviction">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#penalty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Indicates whether the conviction is irrevocable.</rdfs:comment>
+        <rdfs:label xml:lang="en">irrevocable conviction</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#isFromConcersion -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rrao#isFromConcersion">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#penalty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Specifies whether the penalty is the result of a conversion from another penalty.</rdfs:comment>
+        <rdfs:label xml:lang="en">is from conversion</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#isInitialSentence -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rrao#isInitialSentence">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#penalty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">is initial sentence</rdfs:label>
+        <rdfs:seeAlso xml:lang="en">Indicates whether the penalty is an initial sentence.</rdfs:seeAlso>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#levelOfEducation -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rrao#levelOfEducation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The highest degree or level of schooling that an individual has completed.</rdfs:comment>
+        <rdfs:label xml:lang="en">level of education</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://ilostat.ilo.org/methods/concepts-and-definitions/classification-education/"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#locatedIn -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rrao#locatedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#court"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Denotes the physical location or address of a court.</rdfs:comment>
+        <rdfs:label xml:lang="en">located in</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#maritalStatus -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rrao#maritalStatus">
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The legal relationship status of an individual, such as single, married, or divorced.</rdfs:comment>
+        <rdfs:label xml:lang="en">marital status</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#nationality -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rrao#nationality">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Represents the nationality or citizenship of a person.</rdfs:comment>
+        <rdfs:label xml:lang="en">nationality</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#numberOfReleasesFromPrison -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rrao#numberOfReleasesFromPrison">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#senetenced"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment xml:lang="en">Indicated the number of times a person has been released from prison</rdfs:comment>
+        <rdfs:label xml:lang="en">number of releases from prison</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#penaltyDuration -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rrao#penaltyDuration">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#penalty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
+        <rdfs:comment xml:lang="en">Represents the duration for which the penalty is enforced.</rdfs:comment>
+        <rdfs:label xml:lang="en">penalty duration</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#placeOfCrime -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rrao#placeOfCrime">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#crime"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Represents the place on which the crime occurred.</rdfs:comment>
+        <rdfs:label xml:lang="en">place of crime</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#reoffendingRate -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rrao#reoffendingRate">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#senetenced"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment xml:lang="en">Indicated the number of times the offender has commited a crime after release</rdfs:comment>
+        <rdfs:label xml:lang="en">reoffending rate</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#reportedOccupation -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rrao#reportedOccupation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The job or profession that an individual identifies as their primary occupation.</rdfs:comment>
+        <rdfs:label xml:lang="en">reported occupation</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://ilostat.ilo.org/methods/concepts-and-definitions/classification-occupation/"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#resultedInViolatingTerms -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rrao#resultedInViolatingTerms">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#penalty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Indicates whether the imprisonment resulted in the violation of terms.</rdfs:comment>
+        <rdfs:label xml:lang="en">resulted in violating terms</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#sex -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rrao#sex">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Indicates the biological sex of a person.Indicates the biological sex of a person.</rdfs:comment>
+        <rdfs:label xml:lang="en">sex</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#takenInAbsentia -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rrao#takenInAbsentia">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#courtDecision"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Indicates whether the court decision was made in the absence of the individual.</rdfs:comment>
+        <rdfs:label xml:lang="en">taken in absentia</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#timesOccured -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rrao#timesOccured">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#crime"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment xml:lang="en">Represent the number of times a crime has occured</rdfs:comment>
+        <rdfs:label xml:lang="en">times occured</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rrao#workTime -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rrao#workTime">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rrao#communityServiceWork"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
+        <rdfs:comment xml:lang="en">Specifies the duration of time required for community service work.</rdfs:comment>
+        <rdfs:label xml:lang="en">work time</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://i-lab.aegean.gr/ontologies/rrao/iccs#iccs_0502 -->
+
+    <owl:Class rdf:about="http://i-lab.aegean.gr/ontologies/rrao/iccs#iccs_0502"/>
+    
+
+
+    <!-- http://i-lab.aegean.gr/ontologies/rrao/iccs#iccs_0601 -->
+
+    <owl:Class rdf:about="http://i-lab.aegean.gr/ontologies/rrao/iccs#iccs_0601"/>
+    
+
+
+    <!-- http://w3id.org/rrao/iccs#iccs_0502 -->
+
+    <owl:Class rdf:about="http://w3id.org/rrao/iccs#iccs_0502"/>
+    
+
+
+    <!-- http://w3id.org/rrao/iccs#iccs_06 -->
+
+    <owl:Class rdf:about="http://w3id.org/rrao/iccs#iccs_06"/>
+    
+
+
+    <!-- http://www.w3.org/ns/odrl/2/Action -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/odrl/2/Action"/>
+    
+
+
+    <!-- http://www.w3.org/ns/odrl/2/Duty -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/odrl/2/Duty"/>
+    
+
+
+    <!-- http://www.w3.org/ns/odrl/2/Policy -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/odrl/2/Policy"/>
+    
+
+
+    <!-- https://w3id.org/rrao#accessory -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#accessory">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rrao#levelOfParticipation"/>
+        <rdfs:comment xml:lang="en">A person who contributes to the commission of a crime but is not present during the act.</rdfs:comment>
+        <rdfs:label xml:lang="en">Accessory</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#accomplice -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#accomplice">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rrao#levelOfParticipation"/>
+        <rdfs:comment xml:lang="en">A person who assists or aids another in committing a crime.</rdfs:comment>
+        <rdfs:label xml:lang="en">Accomplice</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#communityServiceWork -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#communityServiceWork">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rrao#nonCustodialPenalty"/>
+        <rdfs:comment xml:lang="en">A penalty that requires the offender to perform unpaid work for the benefit of the community.</rdfs:comment>
+        <rdfs:label xml:lang="en">Community Service Work</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#convictionStatus -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#convictionStatus">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/rrao#debtor"/>
+                    <rdf:Description rdf:about="https://w3id.org/rrao#remand"/>
+                    <rdf:Description rdf:about="https://w3id.org/rrao#sentenced"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">The legal status of an individual while they are convicted.</rdfs:comment>
+        <rdfs:label xml:lang="en">Conviction Status</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#correctionaiInstitution -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#correctionaiInstitution">
+        <rdfs:comment xml:lang="en">A correctional institution is a facility where individuals are confined and rehabilitated after being convicted of crimes.</rdfs:comment>
+        <rdfs:label xml:lang="en">Correctional Institution</rdfs:label>
+        <rdfs:seeAlso rdf:resource="euvoc:penalInstitution"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#court -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#court">
+        <owl:disjointWith rdf:resource="https://w3id.org/rrao#person"/>
+        <rdfs:comment xml:lang="en">An institution with the authority to adjudicate legal disputes and administer justice.</rdfs:comment>
+        <rdfs:label xml:lang="en">Court</rdfs:label>
+        <rdfs:seeAlso xml:lang="en">euvoc:courtOfLaw</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#courtDecision -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#courtDecision">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/odrl/2/Policy"/>
+        <rdfs:comment xml:lang="en">A formal judgment or ruling made by a court of law.</rdfs:comment>
+        <rdfs:label xml:lang="en">Court Decision</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#crime -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#crime">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/odrl/2/Action"/>
+        <rdfs:comment xml:lang="en">An act that violates the law and is punishable by a legal authority.</rdfs:comment>
+        <rdfs:label xml:lang="en">Crime</rdfs:label>
+        <rdfs:seeAlso rdf:resource="euvoc:offence"/>
+        <rdfs:seeAlso rdf:resource="https://www.unodc.org/unodc/en/data-and-analysis/statistics/iccs.html"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#custodialPenalty -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#custodialPenalty">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rrao#penalty"/>
+        <rdfs:comment xml:lang="en">A court-ordered punishment that requires the offender to be detained in a secure facility.</rdfs:comment>
+        <rdfs:label xml:lang="en">Custodial penalty</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#custody -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#custody">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rrao#executionOfPenalty"/>
+        <rdfs:label xml:lang="en">Custody</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#endOfSentence -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#endOfSentence">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rrao#wayOfRelease"/>
+        <rdfs:label xml:lang="en">End of Sentence</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#executionOfPenalty -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#executionOfPenalty">
+        <rdfs:comment xml:lang="en">The enforcement or carrying out of a legally imposed punishment.</rdfs:comment>
+        <rdfs:label xml:lang="en">Execution of penalty</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#felony -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#felony">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rrao#gravityOfCrime"/>
+        <rdfs:comment xml:lang="en">A serious criminal offense that typically results in more severe punishments, such as long-term imprisonment.</rdfs:comment>
+        <rdfs:label xml:lang="en">Felony</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#gravityOfCrime -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#gravityOfCrime">
+        <rdfs:comment xml:lang="en">The seriousness or severity of a criminal act.</rdfs:comment>
+        <rdfs:label xml:lang="en">Gravity of Crime</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#homeDetention -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#homeDetention">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rrao#wayOfRelease"/>
+        <rdfs:comment xml:lang="en">A legal penalty where the offender is confined to their home rather than a prison.</rdfs:comment>
+        <rdfs:label xml:lang="en">Home detention</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#imprisoned -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#imprisoned">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rrao#senetenced"/>
+        <rdfs:label xml:lang="en">Imprisoned Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#imprisonment -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#imprisonment">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rrao#custodialPenalty"/>
+        <rdfs:comment xml:lang="en">The act of confining an individual in a prison as punishment for a crime.</rdfs:comment>
+        <rdfs:label xml:lang="en">Imprisonment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#instigator -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#instigator">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rrao#levelOfParticipation"/>
+        <rdfs:comment xml:lang="en">A person who initiates or encourages others to commit a crime.</rdfs:comment>
+        <rdfs:label xml:lang="en">Instigator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#levelOfParticipation -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#levelOfParticipation">
+        <rdfs:comment xml:lang="en">The degree to which an individual is involved in the commission of a crime.</rdfs:comment>
+        <rdfs:label xml:lang="en">Level of participation</rdfs:label>
+        <rdfs:seeAlso rdf:resource="euvoc:complicity"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#liability -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#liability">
+        <rdfs:comment xml:lang="en">The legal responsibility for one&apos;s actions or the consequences of a criminal act.</rdfs:comment>
+        <rdfs:label xml:lang="en">Liability</rdfs:label>
+        <rdfs:seeAlso rdf:resource="euvoc:criminalLiability"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#lifeImprisonment -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#lifeImprisonment">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rrao#custodialPenalty"/>
+        <rdfs:comment xml:lang="en">A prison sentence that lasts for the remainder of the offender&apos;s life.</rdfs:comment>
+        <rdfs:label xml:lang="en">Life Imprisonment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#misdemeanour -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#misdemeanour">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rrao#gravityOfCrime"/>
+        <rdfs:comment xml:lang="en">A less serious criminal offense, often punishable by fines or short-term imprisonment.</rdfs:comment>
+        <rdfs:label xml:lang="en">Misdemeanour</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#nonCustodialPenalty -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#nonCustodialPenalty">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rrao#penalty"/>
+        <rdfs:label xml:lang="en">Non-custodial penalty</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#pecuniarySentence -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#pecuniarySentence">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rrao#nonCustodialPenalty"/>
+        <rdfs:comment xml:lang="en">A financial penalty imposed as punishment for a crime</rdfs:comment>
+        <rdfs:label xml:lang="en">Pecuniary Sentence</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#penalCourt -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#penalCourt">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rrao#court"/>
+        <rdfs:comment xml:lang="en">A court that is responsible for handling criminal cases and offenses.</rdfs:comment>
+        <rdfs:label xml:lang="en">Penal court</rdfs:label>
+        <rdfs:seeAlso xml:lang="en">euvoc:criminalCourt</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#penalty -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#penalty">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/odrl/2/Duty"/>
+        <rdfs:comment xml:lang="en">The legal punishment imposed on an individual who has been convicted of a crime.</rdfs:comment>
+        <rdfs:label xml:lang="en">Penalty</rdfs:label>
+        <rdfs:seeAlso rdf:resource="euvoc:penalty"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#person -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#person">
+        <rdfs:comment xml:lang="en">An individual, a human being perceptible through the senses and subject to physical laws</rdfs:comment>
+        <rdfs:label xml:lang="en">Person</rdfs:label>
+        <rdfs:seeAlso xml:lang="en">foaf:Person</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#principalPerpetrator -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#principalPerpetrator">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rrao#levelOfParticipation"/>
+        <rdfs:comment xml:lang="en">The main individual responsible for committing a criminal act.</rdfs:comment>
+        <rdfs:label xml:lang="en">Principal perpetrator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#prison -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#prison">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rrao#correctionaiInstitution"/>
+        <rdfs:comment xml:lang="en">A secure facility where individuals are confined as punishment for crimes.</rdfs:comment>
+        <rdfs:label xml:lang="en">Prison</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#release -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#release">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rrao#executionOfPenalty"/>
+        <rdfs:comment xml:lang="en">The act of freeing an individual from legal custody or imprisonment.</rdfs:comment>
+        <rdfs:label xml:lang="en">Release</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#released -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#released">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rrao#senetenced"/>
+        <rdfs:label xml:lang="en">Released</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#restraintOrders -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#restraintOrders">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rrao#wayOfRelease"/>
+        <rdfs:comment xml:lang="en">A legal order restricting an individual from certain activities or contact with others.</rdfs:comment>
+        <rdfs:label xml:lang="en">Restraint orders</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#riskOfReoffending -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#riskOfReoffending">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/rrao#High"/>
+                    <rdf:Description rdf:about="https://w3id.org/rrao#Low"/>
+                    <rdf:Description rdf:about="https://w3id.org/rrao#Medium"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">The likelihood that an individual will reoffend or commit another crime after release.</rdfs:comment>
+        <rdfs:label xml:lang="en">Risk of reoffending</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#senetenced -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#senetenced">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rrao#person"/>
+        <rdfs:comment xml:lang="en">A person who has been convicted of a criminal offense.</rdfs:comment>
+        <rdfs:label xml:lang="en">Sentenced</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#suspensionOfExecution -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#suspensionOfExecution">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rrao#wayOfRelease"/>
+        <rdfs:comment xml:lang="en">A delay or postponement of the enforcement of a legal penalty.</rdfs:comment>
+        <rdfs:label xml:lang="en">Suspension of execution (Parole)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#termsImposedUponRelease -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#termsImposedUponRelease">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rrao#wayOfRelease"/>
+        <rdfs:comment xml:lang="en">Specific conditions or restrictions placed on an individual upon their release from custody.</rdfs:comment>
+        <rdfs:label xml:lang="en">Terms imposed upon release</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#wayOfRelease -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#wayOfRelease">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rrao#executionOfPenalty"/>
+        <rdfs:comment xml:lang="en">The manner or conditions under which an individual is released from legal custody.</rdfs:comment>
+        <rdfs:label xml:lang="en">Way of release</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rrao#workInPrison -->
+
+    <owl:Class rdf:about="https://w3id.org/rrao#workInPrison">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rrao#executionOfPenalty"/>
+        <rdfs:comment xml:lang="en">Employment or labor performed by prisoners while serving their sentence.</rdfs:comment>
+        <rdfs:label xml:lang="en">Work in prison</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/rrao#High -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rrao#High">
+        <rdf:type rdf:resource="https://w3id.org/rrao#riskOfReoffending"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rrao#Low -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rrao#Low">
+        <rdf:type rdf:resource="https://w3id.org/rrao#riskOfReoffending"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rrao#Medium -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rrao#Medium">
+        <rdf:type rdf:resource="https://w3id.org/rrao#riskOfReoffending"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rrao#court_01 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rrao#court_01">
+        <rdf:type rdf:resource="https://w3id.org/rrao#penalCourt"/>
+        <rrao:locatedIn xml:lang="en">Athens</rrao:locatedIn>
+        <rdfs:label xml:lang="el">ΣΤ΄ Τριμελές Εφετείο Κακουργημάτων Αθήνας</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rrao#court_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rrao#court_2">
+        <rdf:type rdf:resource="https://w3id.org/rrao#penalCourt"/>
+        <rrao:locatedIn xml:lang="el">Θεσσαλονίκη</rrao:locatedIn>
+        <rdfs:label xml:lang="el">Γ&apos; Μονομελές Πλημ/κείο Θεσ/νίκης</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rrao#court_decision_01 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rrao#court_decision_01">
+        <rdf:type rdf:resource="https://w3id.org/rrao#courtDecision"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rrao#court_decision_02 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rrao#court_decision_02">
+        <rdf:type rdf:resource="https://w3id.org/rrao#courtDecision"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rrao#crime_01 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rrao#crime_01">
+        <rdf:type rdf:resource="http://w3id.org/rrao/iccs#iccs_06"/>
+        <rdf:type rdf:resource="https://w3id.org/rrao#crime"/>
+        <rdfs:label xml:lang="el">ΝΑΡΚΩΤΙΚΑ</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rrao#crime_02 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rrao#crime_02">
+        <rdf:type rdf:resource="http://w3id.org/rrao/iccs#iccs_0502"/>
+        <rdf:type rdf:resource="https://w3id.org/rrao#crime"/>
+        <rdfs:label xml:lang="el">ΚΛΟΠΗ</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rrao#debtor -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rrao#debtor">
+        <rdf:type rdf:resource="https://w3id.org/rrao#convictionStatus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rrao#imprisoned_01 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rrao#imprisoned_01">
+        <rdf:type rdf:resource="https://w3id.org/rrao#imprisoned"/>
+        <rrao:hasStatus rdf:resource="https://w3id.org/rrao#sentenced"/>
+        <rrao:improsonedAt rdf:resource="https://w3id.org/rrao#prison_01"/>
+        <rrao:sentencedTo rdf:resource="https://w3id.org/rrao#penalty_01"/>
+        <rrao:ageGroup>25&lt;age&lt;35</rrao:ageGroup>
+        <rrao:daysInCustody rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">434</rrao:daysInCustody>
+        <rrao:levelOfEducation>intermediate</rrao:levelOfEducation>
+        <rrao:maritalStatus>Άγαμος(η)</rrao:maritalStatus>
+        <rrao:nationality>nationality49</rrao:nationality>
+        <rrao:numberOfReleasesFromPrison rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</rrao:numberOfReleasesFromPrison>
+        <rrao:reportedOccupation>Ιδιωτικός υπάλληλος</rrao:reportedOccupation>
+        <rrao:sex>Male</rrao:sex>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rrao#imprisoned_02 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rrao#imprisoned_02">
+        <rdf:type rdf:resource="https://w3id.org/rrao#released"/>
+        <rrao:hasStatus rdf:resource="https://w3id.org/rrao#sentenced"/>
+        <rrao:improsonedAt rdf:resource="https://w3id.org/rrao#prison_2"/>
+        <rrao:sentencedTo rdf:resource="https://w3id.org/rrao#penalty_02"/>
+        <rrao:ageGroup xml:lang="en">age&lt;=25</rrao:ageGroup>
+        <rrao:daysInCustody rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">217</rrao:daysInCustody>
+        <rrao:daysSinceRelease rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1232</rrao:daysSinceRelease>
+        <rrao:levelOfEducation xml:lang="en">basic</rrao:levelOfEducation>
+        <rrao:maritalStatus xml:lang="el">Άγαμος(η)</rrao:maritalStatus>
+        <rrao:nationality>nationality90</rrao:nationality>
+        <rrao:numberOfReleasesFromPrison rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</rrao:numberOfReleasesFromPrison>
+        <rrao:reportedOccupation xml:lang="el">Ελαιοχρωματιστής, βαφέας, και ασκών συναφές επάγγελμα</rrao:reportedOccupation>
+        <rrao:sex xml:lang="en">Male</rrao:sex>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rrao#penalty_01 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rrao#penalty_01">
+        <rdf:type rdf:resource="https://w3id.org/rrao#imprisonment"/>
+        <rrao:executedAs rdf:resource="https://w3id.org/rrao#penalty_execution_02"/>
+        <rrao:executedAs rdf:resource="https://w3id.org/rrao#pentalty_executions_01"/>
+        <rrao:isRelatedToCrime rdf:resource="https://w3id.org/rrao#crime_01"/>
+        <rrao:penaltyDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2190</rrao:penaltyDuration>
+        <rdfs:label xml:lang="el">Κάθειρξη</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rrao#penalty_02 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rrao#penalty_02">
+        <rdf:type rdf:resource="https://w3id.org/rrao#imprisonment"/>
+        <rrao:executedAs rdf:resource="https://w3id.org/rrao#penalty_execution_03"/>
+        <rrao:executedAs rdf:resource="https://w3id.org/rrao#penalty_execution_04"/>
+        <rrao:isRelatedToCrime rdf:resource="https://w3id.org/rrao#crime_02"/>
+        <rrao:penaltyDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">240</rrao:penaltyDuration>
+        <rdfs:label xml:lang="el">Φυλάκιση</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rrao#penalty_execution_02 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rrao#penalty_execution_02">
+        <rdf:type rdf:resource="https://w3id.org/rrao#workInPrison"/>
+        <rdfs:label xml:lang="el">Επισκεπτήρια</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rrao#penalty_execution_03 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rrao#penalty_execution_03">
+        <rdf:type rdf:resource="https://w3id.org/rrao#endOfSentence"/>
+        <rdfs:label xml:lang="el">ΛΗΞΗ ΠΟΙΝΗΣ</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rrao#penalty_execution_04 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rrao#penalty_execution_04">
+        <rdf:type rdf:resource="https://w3id.org/rrao#workInPrison"/>
+        <rdfs:label xml:lang="el">Καθαριστής</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rrao#pentalty_executions_01 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rrao#pentalty_executions_01">
+        <rdf:type rdf:resource="https://w3id.org/rrao#termsImposedUponRelease"/>
+        <rdfs:label xml:lang="el">Υφ&apos; όρον απόλυση - Ν.4489/2017, αρθ.43, παρ.2 (2/5)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rrao#prison_01 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rrao#prison_01">
+        <rdf:type rdf:resource="https://w3id.org/rrao#prison"/>
+        <rdfs:label xml:lang="el">ΑΓΡΟΤΙΚΟ ΣΩΦΡΟΝΙΣΤΙΚΟ ΚΑΤΑΣΤΗΜΑ ΑΓΙΑΣ ΧΑΝΙΩΝ</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rrao#prison_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rrao#prison_2">
+        <rdf:type rdf:resource="https://w3id.org/rrao#prison"/>
+        <rdfs:label xml:lang="el">ΣΩΦΡΟΝΙΣΤΙΚΟ ΚΑΤΑΣΤΗΜΑ ΝΙΓΡΙΤΑΣ ΣΕΡΡΩΝ</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rrao#remand -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rrao#remand">
+        <rdf:type rdf:resource="https://w3id.org/rrao#convictionStatus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rrao#sentenced -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rrao#sentenced">
+        <rdf:type rdf:resource="https://w3id.org/rrao#convictionStatus"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

@@ -17,7 +17,7 @@ For a full ontology documentation, see [https://w3id.org/rrao](https://w3id.org/
 ---
 
 ## **Key Features**
-![RRAO classes.drawio.png](images/RRAO%20classes.drawio.png)
+![RRAO 1.1 classes.drawio.png](images/RRAO%201.1%20classes.drawio.png)
  
 - Alignment with international standard **International Classification of Crime for Statistical Purposes ([ICCS](https://www.unodc.org/unodc/en/data-and-analysis/statistics/iccs.html))**.
 - Extending [ODRL](https://www.w3.org/ns/odrl/2/) and linking to [EuroVoc](https://eur-lex.europa.eu/browse/eurovoc.html)
@@ -45,12 +45,22 @@ WHERE {
 }
 ```
 
-SPARQL examples can be found in the [queries](queries)directory.
+SPARQL examples can be found in the [queries](queries) directory.
 
 ---
 
 ## **Ontology Versions**
-Latest version: [v1.0](rrao_v1.owl)
+**Latest version**: [v1.1](rrao_v1.1.owl)
+
+**Updates on latest version:**
+
+* The 'Detention Record' class was introduced to enable reification, allowing for more precise representation of detention events. This is particularly useful for cases where a person has been detained in multiple correctional facilities due to different convictions. By linking penalties to specific detention records and correctional institutions, the new class ensures a more structured and accurate representation of an individual's custodial history. 
+
+* The 'Sentenced' class was renamed to 'Person with Custodial History' to reduce stereotyping.
+
+* New properties such as ageEnteringPrison, ageExitingPrison, resultsFromMultipleCrimes, siblings, vocationalQualifications, and dateOfRiskAssessment were added to the ontology.
+
+* Tranlsations of terms were added in Greek, Bulgarian and Portuguese.
 
 Previous versions can be found in the [versions](versions) directory.
 
