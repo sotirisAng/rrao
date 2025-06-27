@@ -1,0 +1,86 @@
+prefixes:
+  rrao: "http://w3id.org/rrao#"
+
+mappings:
+  personWithCustodialHistory:
+    sources: 
+      - [output_processed.csv~csv]
+    s: rrao:personWithCustodialHistory_$(Record_ID)
+    po: 
+      - [a, rrao:personWithCustodialHistory]
+      - [rrao:sex, $(gender), en~lang]
+      - [rrao:ageGroup, $(Age_Range)]
+      - [rrao:levelOfEducation, $(education_level), en~lang]
+      - [rrao:nationality, $(nationality), en~lang]
+      - [rrao:dateOfExitingPrison, $(release_year)]
+      - [rrao:hasStatus, $(Penal_Status_URI)~iri]
+      - [rrao:sentecedTo, rrao:penalty_$(Record_ID)~iri]
+      - [rrao:participatedIn, rrao:crime_$(Record_ID)~iri]
+      - [rrao:detainedAt, rrao:correctionalInstitution_$(Establishment_ID)~iri]
+      - [rrao:assessedWith, rrao:riskAssessment_$(Record_ID)~iri]
+
+  penalty:
+    sources: 
+      - [output_processed.csv~csv]
+    s: rrao:penalty_$(Record_ID)
+    po: 
+      - [a, rrao:penalty]
+      - [rrao:executedAs, rrao:wayOfRelease_$(Record_ID)~iri]
+      - [rrao:isRelatedToCrime, rrao:crime_$(Record_ID)~iri]
+      - [rrao:penaltyDuration, $(Sentence_Days), xsd:integer]
+
+  crime:
+    sources: 
+      - [output_processed.csv~csv]
+    s: rrao:crime_$(Record_ID)
+    po: 
+      - [a, rrao:crime]
+      - [rdfs:label, $(type_of_crime), en~lang]
+      - [rrao:crimeCategory, rrao:crime_category_$(Crime_Category_ID)~iri]
+
+  crime_category:
+    sources: 
+      - [output_processed.csv~csv]
+    s: rrao:crime_category_$(Crime_Category_ID)
+    po: 
+      - [a, rrao:crimeCategory]
+      - [rdfs:label, $(crime_category), en~lang]
+
+  correctionalInstitution:
+    sources: 
+      - [output_processed.csv~csv]
+    s: rrao:correctionalInstitution_$(Establishment_ID)
+    po: 
+      - [a, rrao:correctionalInstitution]
+      - [rdfs:label, $(establishment), en~lang]
+      - [rrao:managementComplexity, $(management_complexity), en~lang]
+
+  wayOfRelease:
+    sources: 
+      - [output_processed.csv~csv]
+    s: rrao:wayOfRelease_$(Record_ID)
+    po: 
+      - [a, rrao:wayOfRelease]
+      - [rdfs:label, $(reason_for_release), en~lang]
+
+  riskAssessment:
+    sources: 
+      - [output_processed.csv~csv]
+    s: rrao:riskAssessment_$(Record_ID)
+    po: 
+      - [a, rrao:riskAssessment]
+      - [rdfs:label, $(Risk_Assessment), en~lang]
+      - [rrao:reoffendingRiskAssessment, $(Risk_Assessment_URI)~iri]
+
+  detentionRecord:
+    sources: 
+      - [output_processed.csv~csv]
+    s: rrao:detentionRecord_$(Record_ID)
+    po: 
+      - [a, rrao:detentionRecord]
+      - [rdfs:concerns, rrao:personWithCustodialHistory_$(Record_ID)~iri]
+      - [rdfs:relatesToCorrectionalInstitution, rrao:correctionalInstitution_$(Establishment_ID)~iri]
+      - [rdfs:relatesPenalty, rrao:penalty_$(Record_ID)~iri]
+      - [rrao:ageGroup, $(Age_Range)]
+      - [rrao:levelOfEducation, $(education_level), en~lang]
+      - [rrao:dateOfExitingPrison, $(release_year)]
